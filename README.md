@@ -1,1 +1,1 @@
-# whynot
+# whyError
