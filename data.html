@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>데이터 분석과 처리 · WHY KIA GAMES</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.toc{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.toc a{border:1px solid var(--line);background:#fff;border-radius:30px;padding:7px 16px;font-size:16px;font-weight:700}
+.toc a:hover{border-color:var(--red);color:var(--red)}
+.tbl{width:100%;border-collapse:collapse;font-size:16px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.tbl th{background:var(--ink);color:#fff;text-align:left;padding:12px 14px;font-weight:700;white-space:nowrap}
+.tbl td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top;color:#333}
+.tblw{overflow-x:auto;border-radius:12px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:8px}
+.fl{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;position:relative}
+.fl b{display:block;font-size:14px;color:var(--red);letter-spacing:1.5px}
+.fl h4{font-size:18px;font-weight:900;margin:4px 0}
+.fl p{font-size:15px;color:var(--sub)}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.rule{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:16px;color:#444}
+.rule b{display:block;color:var(--ink);font-size:17px;margin-bottom:2px}
+.two{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;align-items:start}
+.chart{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.chart h4{font-size:18px;font-weight:900;margin-bottom:14px}
+.br{display:grid;grid-template-columns:72px 1fr 58px;align-items:center;gap:10px;margin:9px 0;font-size:15px}
+.bl{font-weight:700;color:#333}
+.bt{position:relative;height:26px;background:var(--soft);border-radius:6px}
+.bt i{position:absolute;left:0;top:0;bottom:0;background:#c9c9d1;border-radius:6px}
+.bt em{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-style:normal;font-weight:800;font-size:14.5px;color:#222}
+.br.hi .bt i{background:var(--red)}
+.br.hi .bt em{color:#fff}
+.br.lo{opacity:.55}
+.bn{color:var(--sub);text-align:right}
+.chart small{display:block;color:var(--sub);font-size:14px;margin-top:10px}
+.ins h3{font-size:26px;font-weight:900;letter-spacing:-.6px;line-height:1.35;margin:10px 0}
+.ins p{color:#444;font-size:17px}
+.ins .note{margin-top:14px}
+.ytbl td,.ytbl th{text-align:center}.ytbl td:first-child,.ytbl th:first-child{text-align:left}
+.tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tabs button{padding:8px 18px;border-radius:30px;border:1px solid var(--line);background:#fff;font:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tp{display:none}.tp.on{display:block}
+.hvi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.hvi div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.hvi b{font-size:14px;color:var(--red);letter-spacing:2px}
+.hvi p{font-size:16px;color:#333;margin-top:4px}
+.pcard{display:grid;grid-template-columns:1.35fr 1fr;gap:26px;align-items:start;margin-bottom:36px}
+.pcard h3{font-size:26px;font-weight:900;letter-spacing:-.6px;margin:8px 0 10px}
+.pcard p{font-size:17px;color:#444}
+.stack{margin-top:14px}
+.stack .row{display:grid;grid-template-columns:62px 1fr;gap:10px;align-items:center;margin:8px 0;font-size:15px;font-weight:700}
+.sbar{display:flex;height:28px;border-radius:6px;overflow:hidden;font-size:13.5px;font-weight:800;color:#fff}
+.sbar span{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+.c1{background:#3a3a42}.c2{background:var(--red)}.c3{background:#f08a9c}.c4{background:#c9c9d1;color:#333!important}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--sub);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.mini{width:100%;border-collapse:collapse;font-size:15px;margin-top:12px}
+.mini th,.mini td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
+.mini th:first-child,.mini td:first-child{text-align:left}
+.mini th{color:var(--sub);font-weight:700;font-size:14px}
+.mini tr.hl td{color:var(--red);font-weight:800}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pc{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.pc .fig{border:0;border-radius:0;border-bottom:1px solid var(--line)}
+.pb{padding:18px 20px}
+.pb h4{font-size:21px;font-weight:900;letter-spacing:-.4px}
+.ps{font-size:14px;font-weight:800;color:var(--red);letter-spacing:.5px}
+.pb ul{margin-top:8px;padding-left:18px;font-size:16px;color:#444}
+.pb li{margin:3px 0}
+.dl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.dl a{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:16px;font-weight:700}
+.dl a:hover{border-color:var(--red);color:var(--red)}
+.dl a small{color:var(--sub);font-weight:600;font-size:14px}
+@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.rules,.two,.pcard,.pgrid,.hvi,.dl{grid-template-columns:1fr}}
+@media(max-width:520px){.flow{grid-template-columns:1fr}.br{grid-template-columns:62px 1fr 48px}}
+</style>
+</head>
+<body>
+<div class="util"><div class="wrap"><span><b>TEAM whyError</b> · 동아MX 데이터AI융합과정 7기 미니프로젝트</span><span>KIA Tigers 2024–2026 Data</span></div></div>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html"><span class="mark">W</span>WHY<span>KIA</span> GAMES</a>
+  <button class="burger" aria-label="메뉴 열기" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+  <nav class="menu">
+    <a href="index.html">홈</a>
+    <a href="team.html">프로젝트 팀 소개</a>
+    <a href="project.html">프로젝트</a>
+    <a href="data.html" class="on">데이터 분석과 처리</a>
+    <div class="dd"><a href="index.html#games">GAME ▾</a><div class="sub"><a href="games/catch/index.html" target="_blank" rel="noopener">공 잡 기<small>THE CATCHER</small></a><a href="games/dodge/index.html" target="_blank" rel="noopener">공피하기<small>DODGE THE PITCH</small></a><a href="games/survival/index.html" target="_blank" rel="noopener">갸서바이벌<small>KBO SURVIVAL</small></a><a href="games/sachun/index.html" target="_blank" rel="noopener">갸천성<small>KIA BASEBALL PLAYER</small></a><a href="games/innings/index.html" target="_blank" rel="noopener">이닝체험<small>THREE INNINGS</small></a></div></div>
+  </nav>
+</div></header>
+
+<div class="phero"><div class="wrap"><span class="k">DATA ANALYSIS &amp; PROCESSING</span><h1>데이터는 이렇게 <em>모으고, 다듬고, 읽었어요</em></h1><p>팀 경기 결과에서 투구 하나하나까지. 우리가 어떤 데이터를 모았고, 어떤 기준으로 정리했으며, 무엇을 발견하고 무엇을 확인하지 못했는지 정리했습니다.</p>
+<div class="toc"><a href="#sets">① 수집한 데이터</a><a href="#process">② 전처리 과정</a><a href="#weather">③ 날씨 × 승률</a><a href="#timeline">④ 5단 타임라인</a><a href="#pitcher">⑤ 투수 분석</a><a href="#batter">⑥ 타자 분석</a><a href="#game">⑦ 데이터 → 게임</a><a href="#download">⑧ 데이터 받기</a></div></div></div>
+
+<section id="sets"><div class="wrap">
+  <div class="sh"><h2><span class="k">01 · DATASETS</span>우리가 <em>모은 데이터</em></h2></div>
+  <div class="tblw"><table class="tbl"><thead><tr><th>데이터</th><th>출처</th><th>규모 · 기간</th><th>처리 내용</th></tr></thead><tbody><tr><td><b>KBO 경기 결과</b></td><td>KBO 경기 기록 기반 공개 데이터 · dentearl/kbo-data</td><td>2024~2026 리그 전체 경기</td><td>경기일자·홈/원정·득점·승패무 정리, 팀코드·날짜 형식 통일</td></tr><tr><td><b>KIA 경기 × 기상 결합</b></td><td>KBO 경기 + 기상청 ASOS 시간 관측</td><td>날씨 약 14만 건 → 432경기 × 17열</td><td>팀 성적에 stadium 컬럼 생성, 해당 구장 날씨를 날짜·장소 기준으로 결합</td></tr><tr><td><b>부상공시</b></td><td>KBO 부상자 공시 (직접 수집)</td><td>2024~2026 KIA</td><td>선수·포지션·이탈 구간·공백일수 정리, 공시 기간과 실제 미출장 기간 구분</td></tr><tr><td><b>투수 PBP</b></td><td>Hugging Face · slothman3878/kbo_playbyplay v0</td><td>58,744구 (24: 22,477 · 25: 21,608 · 26: 14,659)</td><td>KIA 투수 추출 · 49열, 구종·구속·투구 위치 정리 · 2026은 7/26까지</td></tr><tr><td><b>타자 PBP</b></td><td>Hugging Face · slothman3878/kbo_playbyplay v0</td><td>58,927구 (24: 22,323 · 25: 22,215 · 26: 14,389)</td><td>KIA 타자 추출 · 49열, 타석 마지막 투구 기준 결과 재구성</td></tr><tr><td><b>연봉</b></td><td>구단·언론 공개자료 + 직접 검증</td><td>171행 × 8열 (24: 56 · 25: 64 · 26: 51)</td><td>공개 자료로 확인 안 되는 연봉은 직접 검증 후 수기 입력 · FA·다년계약은 연평균 환산 · 1 USD = 1,327 KRW</td></tr></tbody></table></div>
+</div></section>
+
+<section id="process" class="soft"><div class="wrap">
+  <div class="sh"><h2><span class="k">02 · PROCESSING</span>전처리는 <em>이런 순서로</em></h2></div>
+  <div class="flow">
+    <div class="fl"><b>STEP 1</b><h4>수집</h4><p>경기·기상·부상공시·PBP·연봉 원본 확보</p></div>
+    <div class="fl"><b>STEP 2</b><h4>점검</h4><p>결측값·비정상값·중복 행 확인</p></div>
+    <div class="fl"><b>STEP 3</b><h4>통일</h4><p>팀 코드(HT=KIA)·날짜 형식·선수명 정리</p></div>
+    <div class="fl"><b>STEP 4</b><h4>연결</h4><p>고유 키값 설정 → 경기·날씨·선수 데이터 결합</p></div>
+    <div class="fl"><b>STEP 5</b><h4>재구성</h4><p>타석 마지막 투구 기준 결과, 선수·시즌 통합</p></div>
+  </div>
+  <div class="rules">
+    <div class="rule"><b>타석 결과는 ‘마지막 투구’ 기준</b>PBP의 events는 한 타석의 모든 투구 행에 반복될 수 있어, 마지막 투구 행만 골라 중복 집계를 막았습니다.</div>
+    <div class="rule"><b>헛스윙*은 잠정 지표</b>pitch_result S+V를 헛스윙으로 잠정 분류했습니다. 코드 의미가 완전히 확정되지 않아 * 표시를 유지합니다.</div>
+    <div class="rule"><b>좌완/우완도 잠정 분류</b>원본에 투수 손잡이 컬럼이 없어, 투수별 평균 release_pos_x 방향으로 좌·우완을 나눴습니다.</div>
+    <div class="rule"><b>배운 코드로 먼저, 모르는 건 확인하며</b>shape·columns로 크기와 컬럼을 확인하고 drop·rename으로 정리했습니다. 배우지 못한 처리는 AI가 제안한 코드를 확인하며 진행했고, if·for문으로 조건을 점검해 오류가 나오면 다시 전처리했습니다.</div>
+    <div class="rule"><b>조원끼리 재검증</b>경기ID·날짜·구장·선수·시즌 기준으로 날씨·경기·선수 기록을 결합한 뒤, 공유 자료를 서로 재검증하며 집계 기준도 함께 확인했습니다.</div>
+    <div class="rule"><b>원본을 함부로 바꾸지 않기</b>ASOS 강수량 공란은 0mm로 일괄 변경하지 않고 그대로 두었습니다. 환율은 1 USD = 1,327 KRW로 고정했습니다.</div>
+  </div>
+</div></section>
+
+<section id="weather"><div class="wrap">
+  <div class="sh"><h2><span class="k">03 · WEATHER</span>KIA는 <em>몇 도</em>에서 가장 강할까?</h2></div>
+  <div class="two">
+    <div class="chart"><h4>기온 구간별 KIA 승률 (2024~2026 정규시즌 432경기)</h4><div class="br lo"><span class="bl">10℃ 미만</span><div class="bt"><i style="width:47.6%"></i><em>33.33%</em></div><span class="bn">3경기</span></div><div class="br"><span class="bl">10~15℃</span><div class="bt"><i style="width:62.9%"></i><em>44.00%</em></div><span class="bn">25경기</span></div><div class="br"><span class="bl">15~20℃</span><div class="bt"><i style="width:79.0%"></i><em>55.32%</em></div><span class="bn">48경기</span></div><div class="br"><span class="bl">20~25℃</span><div class="bt"><i style="width:74.6%"></i><em>52.21%</em></div><span class="bn">118경기</span></div><div class="br hi"><span class="bl">25~30℃</span><div class="bt"><i style="width:86.5%"></i><em>60.53%</em></div><span class="bn">153경기</span></div><div class="br"><span class="bl">30℃ 이상</span><div class="bt"><i style="width:71.4%"></i><em>50.00%</em></div><span class="bn">85경기</span></div><small>승률 = 승 ÷ (승+패) × 100, 무승부 제외 · 경기 시작 시점 ASOS 기온 기준 · 10℃ 미만은 3경기뿐이라 흐리게 표시</small></div>
+    <div class="ins"><span class="tag">발견</span><h3>25~30℃ 구간에서 승률 60.53%로 가장 높았지만, 30℃가 넘으면 50%로 떨어졌어요.</h3><p>더울수록 잘하는 것도, 추울수록 못하는 것도 아니었습니다. 그리고 같은 기온 구간이라도 시즌마다 승률이 크게 달랐어요 — 2025년 30℃ 이상은 35.48%, 2024년은 62.86%.</p>
+      <div class="note">이건 기온과 승률이 <b>함께 나타난 관계</b>일 뿐, 날씨가 승패를 결정했다는 증거가 아닙니다. 관측소 기온과 야구장 안의 실제 체감 기온도 다를 수 있어요.</div></div>
+  </div>
+  <div class="tblw" style="margin-top:24px"><table class="tbl ytbl"><thead><tr><th>기온 구간</th><th>2024 승률</th><th>2025 승률</th><th>2026 승률</th><th>경기 수 (24 / 25 / 26)</th></tr></thead><tbody>
+    <tr><td>10~15℃</td><td>66.67%</td><td>54.55%</td><td>12.50%</td><td>6 / 11 / 8</td></tr>
+    <tr><td>15~20℃</td><td>65.00%</td><td>41.67%</td><td>53.33%</td><td>21 / 12 / 15</td></tr>
+    <tr><td>20~25℃</td><td>47.06%</td><td>54.76%</td><td>54.05%</td><td>35 / 44 / 39</td></tr>
+    <tr><td>25~30℃</td><td>68.09%</td><td>46.34%</td><td>64.06%</td><td>47 / 42 / 64</td></tr>
+    <tr><td>30℃ 이상</td><td>62.86%</td><td>35.48%</td><td>50.00%</td><td>35 / 32 / 18</td></tr>
+  </tbody></table></div>
+</div></section>
+
+<section id="timeline" class="soft"><div class="wrap">
+  <div class="sh"><h2><span class="k">04 · 5-LAYER TIMELINE</span>투수 · 날씨 · 순위 · 득실 · 타자를 <em>한 시간축</em>에</h2></div>
+  <p class="lead" style="margin-bottom:20px">날씨와 핵심 선수의 부상(공시 → 복귀)이 순위 변화와 겹치는지 보려고, 다섯 개 데이터를 같은 날짜 축에 쌓았습니다. 빨간 막대는 공식 부상공시, 주황 막대는 공시 종료 후 실제 복귀 전 기간입니다.</p>
+  <div class="tabs" data-tabs="tl"><button class="on" data-t="t24">2024</button><button data-t="t25">2025</button><button data-t="t26">2026 (7월까지)</button></div>
+  <div class="tp on" id="t24"><figure class="fig"><img src="assets/img/w2024.jpg" alt="2024 KIA 5단 타임라인" loading="lazy"><figcaption>2024 KIA — 투수 출장·부상 / 경기일 기온 / 누적 순위 / 득점·실점 5경기 이동평균 / 타자 출장·부상 · 클릭하면 크게 보기</figcaption></figure></div>
+  <div class="tp" id="t25"><figure class="fig"><img src="assets/img/w2025.jpg" alt="2025 KIA 5단 타임라인" loading="lazy"><figcaption>2025 KIA — 30℃ 이상 고온 / 15℃ 미만 저온 구간 강조 · 클릭하면 크게 보기</figcaption></figure></div>
+  <div class="tp" id="t26"><figure class="fig"><img src="assets/img/w2026.jpg" alt="2026 KIA 5단 타임라인" loading="lazy"><figcaption>2026 KIA — 데이터는 2026년 7월까지 · 클릭하면 크게 보기</figcaption></figure></div>
+  <div class="hvi">
+    <div><b>가설</b><p>날씨와 핵심 선수의 부상이 KIA의 성적 변화에 영향을 미칠 것이다.</p></div>
+    <div><b>검증</b><p>2024~2026 경기일 날씨·부상공시·출장·득실·순위를 동일한 시간축으로 비교했다.</p></div>
+    <div><b>결과 · 해석</b><p>3개년에 공통으로 반복되는 패턴은 뚜렷하지 않았다. 성적은 득실 균형, 선수층의 대체 능력, 여러 선수의 동시 이탈 같은 <b>복합 요인</b>으로 봐야 한다.</p></div>
+  </div>
+  <div class="note" style="margin-top:16px">가설이 맞지 않았다는 것도 결과입니다. 여기서 우리는 “팀이 왜 이겼나”에서 “<b>선수는 실제로 어떻게 플레이하나</b>”로 질문을 바꿨어요.</div>
+</div></section>
+
+<section id="pitcher"><div class="wrap">
+  <div class="sh"><h2><span class="k">05 · PITCHERS</span>투수는 <em>누구에게 무엇을</em> 던지나</h2></div>
+  <div class="pcard">
+    <figure class="fig"><img src="assets/img/yhj.jpg" alt="양현종 주력 구종별 투구 위치와 결과" loading="lazy"><figcaption>양현종(좌완) 주력 구종별 투구 위치와 결과 · 2024~2026 · 파란 ◆ 안타 허용, 빨간 ★ 홈런 허용</figcaption></figure>
+    <div><span class="tag">양현종 · 좌완</span><h3>포심은 그대로, 보조구종은 타자 손에 따라 바꾼다</h3><p>총 6,634구 중 포심이 46.1%(평균 139.9km/h). 좌·우타자 모두 포심 비중은 45~47%로 거의 같지만, 좌타자에겐 슬라이더, 우타자에겐 체인지업 비중을 크게 높였습니다.</p>
+      <div class="stack">
+        <div class="row">좌타자<div class="sbar"><span class="c1" style="width:46.8%">포심 46.8</span><span class="c3" style="width:38.3%">슬라이더 38.3</span><span class="c2" style="width:8.8%">체</span><span class="c4" style="width:6.1%"></span></div></div>
+        <div class="row">우타자<div class="sbar"><span class="c1" style="width:45.5%">포심 45.5</span><span class="c2" style="width:40.4%">체인지업 40.4</span><span class="c3" style="width:10.6%">슬</span><span class="c4" style="width:3.5%"></span></div></div>
+        <div class="legend"><span><i class="c1"></i>포심</span><span><i class="c3"></i>슬라이더</span><span><i class="c2"></i>체인지업</span><span><i class="c4"></i>기타</span></div>
+      </div>
+      <div class="note" style="margin-top:14px"><b>김민혁(KT·좌타) 상대</b>: 좌타자 전체 대비 포심 46.8% → 55.8%, 슬라이더 38.3% → 27.9%. 43구·6안타 중 포심이 5안타 — 평소 몸쪽 공략과 상대별 위치 차이를 살폈습니다.<br>KT 장성우 상대 사례: 체인지업이 최종구였던 5타석에서 3안타 2홈런 — 주무기가 실제 장타 피해로 이어진 확인 사례예요.</div>
+    </div>
+  </div>
+  <div class="pcard">
+    <figure class="fig"><img src="assets/img/nail_etc.jpg" alt="네일 그 외 구종 1~4순위 상세 분석" loading="lazy"><figcaption>네일(우완) ‘그 외 구종’ 재분해 — 스위퍼·커터·포심·커브</figcaption></figure>
+    <div><span class="tag">네일 · 우완</span><h3>‘기타’로 묶였던 스위퍼가 숨은 결정구였다</h3><p>TOP3(싱커·슬라이더·체인지업)로 그래프를 그렸더니 ‘그 외’ 덩어리가 너무 컸어요. 다시 쪼개 보니 네일은 싱커를 중심으로 여러 구종을 폭넓게 쓰는 <b>다구종 투수</b>였습니다.</p>
+      <table class="mini"><thead><tr><th>그 외 구종</th><th>투구 수</th><th>평균 구속</th><th>최종구 삼진율</th></tr></thead><tbody>
+        <tr class="hl"><td>스위퍼</td><td>869구</td><td>133.1km/h</td><td>36.0%</td></tr>
+        <tr><td>커터</td><td>835구</td><td>141.9km/h</td><td>8.6%</td></tr>
+        <tr><td>포심</td><td>456구</td><td>147.6km/h</td><td>21.7%</td></tr>
+        <tr><td>커브</td><td>40구</td><td>123.4km/h</td><td>7.7%</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+  <div class="pgrid">
+    <div class="pc"><figure class="fig"><img src="assets/img/nail.jpg" alt="네일 주력구종 TOP3 + 그 외 분석 그래프" loading="lazy"></figure><div class="pb"><h4>네일 주력구종 TOP3 + 그 외</h4><span class="ps">우완 · 2024~2026</span><ul><li>싱커 중심, TOP3 밖 구종 비중이 큼</li><li>KT 김상수 15타석 5삼진 — 억제 결과가 뚜렷했던 사례</li></ul></div></div>
+    <div class="pc"><figure class="fig"><img src="assets/img/oller.jpg" alt="올러 주력구종 TOP3 + 그 외 분석 그래프" loading="lazy"></figure><div class="pb"><h4>올러 주력구종 TOP3 + 그 외</h4><span class="ps">우완 · KT 상대</span><ul><li>안현민 15타석 4안타 2삼진 · 장성우 13타석 1홈런</li><li>김민혁 10타석 4삼진 — 상대적으로 유리했던 사례</li></ul></div></div>
+  </div>
+</div></section>
+
+<section id="batter" class="soft"><div class="wrap">
+  <div class="sh"><h2><span class="k">06 · BATTERS</span>타자의 약한 위치를 찾고, <em>그 공을 던진 투수</em>를 역추적</h2></div>
+  <p class="lead" style="margin-bottom:22px">좌·우완을 나눠 투구 위치에 안타·홈런·삼진·헛스윙*을 겹쳐 보고, 눈에 띄는 영역이 있으면 그 위치로 공을 던진 상대 투수의 구종·구속까지 거슬러 올라갔습니다.</p>
+  <div class="pgrid">
+    <div class="pc"><figure class="fig"><img src="assets/img/kdy_kwak.jpg" alt="김도영 × 곽빈 분석 그래프" loading="lazy"></figure><div class="pb"><h4>김도영 × 곽빈</h4><span class="ps">우타 · 존 상·하단 헛스윙 → 곽빈(우완) 역추적</span><ul><li>존보다 낮은 유인구에 헛스윙 비율이 높고, 높은 유인구에도 반응</li><li>좌우로 빠지는 공엔 잘 속지 않고, 존 넓은 범위에서 안타·홈런 생산</li></ul></div></div>
+    <div class="pc"><figure class="fig"><img src="assets/img/nsb_ahn.jpg" alt="나성범 × 안우진 분석 그래프" loading="lazy"></figure><div class="pb"><h4>나성범 × 안우진</h4><span class="ps">좌타 · 2026 존 아래 패턴 → 안우진(우완) 역추적</span><ul><li>38구 8타석 0안타 4삼진, 존 아래 투구 44.7%</li><li>결정구: 슬라이더 143·144km/h, 커브 131·133km/h, 체인지업 134km/h</li></ul></div></div>
+    <div class="pc"><figure class="fig"><img src="assets/img/chw_kim.jpg" alt="최형우 × 김광현 분석 그래프" loading="lazy"></figure><div class="pb"><h4>최형우 × 김광현</h4><span class="ps">좌타 · 7시 방향(좌측 하단) → 김광현(좌완) 역추적</span><ul><li>65구 중 7시 방향 25구(38.5%), 헛스윙* 6구는 모두 변화구</li><li>‘낮은 공 약점’으로 뭉뚱그리지 않고 위치 + 구종을 함께 본 사례</li></ul></div></div>
+    <div class="pc"><figure class="fig"><img src="assets/img/pjh.jpg" alt="박재현 2026 좌·우완 분석 분석 그래프" loading="lazy"></figure><div class="pb"><h4>박재현 2026 좌·우완 분석</h4><span class="ps">좌타 신인 · Hot/Cold Zone 형성 관찰</span><ul><li>우완 상대 홈런율 4.35% vs 좌완 1.79%, 안타율·삼진율은 비슷</li><li>박준현(존 아래 유인구형) · 임기영(9시 몸쪽 압박형) 서로 다른 공략 사례</li></ul></div></div>
+  </div>
+  <div class="note" style="margin-top:20px">소표본 상대전적은 ‘대표 사례’로만 표현했습니다. 특정 선수의 절대적인 약점이나 천적 관계로 단정하지 않아요. 2026 PBP는 7월 26일까지입니다.</div>
+</div></section>
+
+<section id="game"><div class="wrap">
+  <div class="sh"><h2><span class="k">07 · DATA → GAME</span>분석 결과를 <em>게임으로</em> 옮기다</h2></div>
+  <div class="two">
+    <figure class="fig"><img src="assets/img/tut_data.jpg" alt="좌·우타자 상대 투구 위치 분석" loading="lazy"><figcaption>분석: 좌·우타자 상대 스트라이크/아웃 유도 위치 (포수 시점)</figcaption></figure>
+    <figure class="fig"><img src="assets/img/tut_game.jpg" alt="튜토리얼 게임 화면" loading="lazy"><figcaption>게임: 실제 구종 비중과 구속이 그대로 공이 되는 튜토리얼 ‘90초의 마운드’</figcaption></figure>
+  </div>
+  <div class="ins" style="margin-top:24px;max-width:860px"><h3>야구를 모르는 사람에게 표 대신 공을 던졌어요</h3><p>전처리한 58,744개의 투구 기록에서 선수별 구종 비중과 구속을 뽑아 게임 속 공의 종류·속도로 바꿨습니다. 타율·ERA를 몰라도, 네일의 공이 얼마나 다양하게 휘는지, 양현종이 어떤 공을 자주 던지는지 몇 판만 해보면 몸으로 알게 돼요. 이 튜토리얼이 우리 분석과 미니게임을 잇는 다리입니다.</p>
+    <p style="margin-top:18px"><a class="btn p" href="tutorial/index.html" target="_blank" rel="noopener">튜토리얼 + 데이터 자료 열기 ▶</a></p></div>
+</div></section>
+
+<section id="download" class="soft"><div class="wrap">
+  <div class="sh"><h2><span class="k">08 · DOWNLOAD</span>정리한 데이터 <em>직접 보기</em></h2></div>
+  <div class="dl">
+    <a href="assets/data/kia_2024_timeline.csv" download>2024 5단 타임라인 검증 CSV<small>142경기 ↓</small></a>
+    <a href="assets/data/kia_2025_timeline.csv" download>2025 5단 타임라인 검증 CSV<small>142경기 ↓</small></a>
+    <a href="assets/data/kia_2026_timeline.csv" download>2026 5단 타임라인 검증 CSV<small>144행 ↓</small></a>
+    <a href="assets/data/kia_weather_dashboard.xlsx" download>기온별 승률 대시보드 XLSX<small>432경기 ↓</small></a>
+    <a href="assets/data/yang_main_pitches.csv" download>양현종 주력구종 요약 CSV<small>↓</small></a>
+    <a href="assets/data/nail_other_pitches.csv" download>네일 그 외 구종 요약 CSV<small>↓</small></a>
+  </div>
+</div></section>
+<script>
+document.querySelectorAll('[data-tabs]').forEach(function(g){g.querySelectorAll('button').forEach(function(b){b.onclick=function(){g.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);document.getElementById(x.dataset.t).classList.toggle('on',x===b)})}})});
+</script>
+<footer><div class="wrap row">
+  <div><b>WHY KIA GAMES</b><br>© 2026 Team whyError · 동아MX 데이터AI융합과정 7기<br>데이터: KBO 경기 데이터 · 기상청 ASOS · KBO PBP(Hugging Face slothman3878/kbo_playbyplay) · 부상공시 · 연봉 공개자료</div>
+  <div class="lk"><a href="team.html">팀 소개</a> · <a href="project.html">프로젝트</a> · <a href="data.html">데이터 분석과 처리</a> · <a href="index.html#games">GAME</a> · <a href="tutorial/index.html" target="_blank" rel="noopener">튜토리얼</a></div>
+</div></footer>
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img alt=""></div>
+<script>
+document.querySelectorAll('.fig img').forEach(function(im){im.addEventListener('click',function(){var lb=document.getElementById('lb');lb.querySelector('img').src=im.src;lb.classList.add('on')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').classList.remove('on')});
+</script>
+</body>
+</html>
