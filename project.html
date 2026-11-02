@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>프로젝트 · WHY KIA GAMES</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.dir{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.dir div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}
+.dir b{font-size:28px;font-weight:900;color:#c9c9d1;letter-spacing:-1px}
+.dir .on{border-color:var(--red);background:var(--pink)}.dir .on b{color:var(--red)}
+.dir h4,.tech h4{font-size:20px;font-weight:900;margin:4px 0 6px}
+.dir p,.tech p{font-size:16px;color:#444}
+.tech{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tech div{background:var(--soft);border-radius:14px;padding:20px;border-top:3px solid var(--red)}
+.topic{background:var(--ink);color:#fff;border-radius:16px;padding:30px 34px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.topic span{font-size:14px;font-weight:800;letter-spacing:2px;color:#ff6b84}
+.topic h2{font-size:26px;font-weight:900;letter-spacing:-.6px;line-height:1.35;flex:1;min-width:260px}
+.tl{position:relative;margin-top:40px}
+.tl::before{content:"";position:absolute;left:47px;top:0;bottom:0;width:2px;background:var(--line)}
+.st{display:grid;grid-template-columns:96px 1fr;gap:24px;padding-bottom:34px;position:relative}
+.num{width:96px;height:96px;border-radius:50%;background:#fff;border:2px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--sub);letter-spacing:1px;position:relative;z-index:1}
+.num b{font-size:30px;color:var(--ink);letter-spacing:-1px;line-height:1}
+.st:last-child .num{background:var(--red);border-color:var(--red);color:#ffd5dc}
+.st:last-child .num b{color:#fff}
+.sc{border:1px solid var(--line);border-radius:14px;padding:24px 26px;background:#fff}
+.sc h3{font-size:23px;font-weight:900;letter-spacing:-.5px;margin-bottom:8px}
+.sc p{color:#444;font-size:17px}
+.sc ul{margin:12px 0 0 0;padding-left:20px;color:#444;font-size:16.5px}
+.sc li{margin:4px 0}
+.sc .note{margin-top:14px}
+.vision{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+.vc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.vc .ic{font-size:28px}
+.vc h3{font-size:20px;font-weight:900;margin:8px 0 6px}
+.vc p{font-size:16px;color:var(--sub)}
+.final{font-size:28px;font-weight:900;letter-spacing:-.8px;line-height:1.45;text-align:center;max-width:820px;margin:0 auto}
+.final em{font-style:normal;color:var(--red)}
+@media(max-width:800px){.tl::before{left:31px}.st{grid-template-columns:64px 1fr;gap:14px}.num{width:64px;height:64px;font-size:11px}.num b{font-size:24px}.vision,.dir,.tech{grid-template-columns:1fr}.final{font-size:24px}.sc{padding:20px}}
+</style>
+</head>
+<body>
+<div class="util"><div class="wrap"><span><b>TEAM whyError</b> · 동아MX 데이터AI융합과정 7기 미니프로젝트</span><span>KIA Tigers 2024–2026 Data</span></div></div>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html"><span class="mark">W</span>WHY<span>KIA</span> GAMES</a>
+  <button class="burger" aria-label="메뉴 열기" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+  <nav class="menu">
+    <a href="index.html">홈</a>
+    <a href="team.html">프로젝트 팀 소개</a>
+    <a href="project.html" class="on">프로젝트</a>
+    <a href="data.html">데이터 분석과 처리</a>
+    <div class="dd"><a href="index.html#games">GAME ▾</a><div class="sub"><a href="games/catch/index.html" target="_blank" rel="noopener">공 잡 기<small>THE CATCHER</small></a><a href="games/dodge/index.html" target="_blank" rel="noopener">공피하기<small>DODGE THE PITCH</small></a><a href="games/survival/index.html" target="_blank" rel="noopener">갸서바이벌<small>KBO SURVIVAL</small></a><a href="games/sachun/index.html" target="_blank" rel="noopener">갸천성<small>KIA BASEBALL PLAYER</small></a><a href="games/innings/index.html" target="_blank" rel="noopener">이닝체험<small>THREE INNINGS</small></a></div></div>
+  </nav>
+</div></header>
+
+<div class="phero"><div class="wrap"><span class="k">PROJECT</span><h1>“왜 이겼을까?”에서<br><em>“함께 해볼까?”</em>로</h1><p>KIA 타이거즈 2024~2026 데이터를 모으고, 검증하고, 실패하고, 다시 질문하면서 웹게임에 도착하기까지의 과정입니다.</p></div></div>
+<section><div class="wrap">
+  <div class="topic"><span>주제</span><h2>KIA Tigers 2024~2026년 데이터 분석 자료를 활용한 웹게임 개발 및 배포</h2></div>
+  <div class="sh" style="margin-top:44px"><h2><span class="k">DIRECTION</span>주제 선정과 <em>방향 전환</em></h2></div>
+  <div class="dir">
+    <div><b>01</b><h4>날씨와 야구</h4><p>날씨가 경기 결과와 관련 있는지 검증했습니다.</p></div>
+    <div><b>02</b><h4>분석의 세분화</h4><p>연관성이 뚜렷하지 않아 부상·연봉·선수 기록까지 넓혔습니다.</p></div>
+    <div><b>03</b><h4>중간 피드백</h4><p>질문이 복잡해지며 처음 의도와 멀어져, 피드백을 통해 빠르게 방향을 수정했습니다.</p></div>
+    <div class="on"><b>04</b><h4>웹게임 개발</h4><p>보유 데이터로 입문자부터 마니아까지 체험할 게임을 만들었습니다.</p></div>
+  </div>
+  <div class="sh" style="margin-top:44px"><h2><span class="k">TECH STACK</span>사용 기술과 <em>역할</em></h2></div>
+  <div class="tech">
+    <div><h4>Python · Jupyter Notebook</h4><p>데이터 불러오기와 구조 확인, 전처리·검증을 진행했습니다.</p></div>
+    <div><h4>Pandas · Matplotlib</h4><p>표 형태의 데이터를 정리하고, 분석 결과를 그래프로 시각화했습니다.</p></div>
+    <div><h4>ChatGPT · Claude</h4><p>데이터 재검증과 미학습 코드 이해, 웹페이지·웹게임 제작에 활용했습니다.</p></div>
+    <div><h4>HTML · CSS · JavaScript</h4><p>분석 페이지와 게임 화면을 구성하고 브라우저에서 실행했습니다.</p></div>
+  </div>
+  <div class="sh" style="margin-top:44px"><h2><span class="k">PROCESS</span>단계별 <em>상세 과정</em></h2></div>
+  <div class="tl" style="margin-top:8px">
+  <div class="st"><div class="num">STEP<b>01</b></div><div class="sc">
+    <h3>팀 경기 데이터 수집 및 전처리</h3><p>KIA의 2024~2026 시즌 성적 변화를 확인할 수 있는 기본 데이터를 구축했습니다.</p><ul><li>KBO 경기 데이터 수집 — 경기일자, 홈·원정팀, 득점, 승·패·무 정리</li><li>결측값과 데이터 구조 점검, 팀 코드·날짜 형식 통일</li><li>2024~2026 KIA 팀 데이터 수집 및 전처리</li><li>구장 위치별 기상청(ASOS) 데이터 수집 및 전처리</li><li>불필요한 컬럼 삭제, 데이터 연동을 위한 고유 키값 설정 및 컬럼 추가</li></ul>
+  </div></div>
+  <div class="st"><div class="num">STEP<b>02</b></div><div class="sc">
+    <h3>선수 PBP 데이터 수집 및 전처리</h3><p>날씨와 팀 승패 데이터만으로는 경기 결과가 만들어지는 과정을 설명하기 어려웠습니다. 그래서 분석 범위를 선수 단위로 확대해 타자·투수·구종·구속·투구 위치·타석 결과가 담긴 PBP(Play-by-Play) 데이터를 추가로 수집했습니다.</p><ul><li>KIA 타자·투수 PBP 데이터 분리</li><li>선수명 및 시즌 데이터 정리</li><li>구종·구속·투구 위치 전처리</li><li>타석 마지막 투구 기준으로 안타·홈런·삼진 결과 재구성</li><li>2024~2026 선수 데이터 통합</li></ul><div class="note">분석 데이터가 팀 단위에서 선수·투구 단위까지 확장됐습니다. 단, 2026 PBP는 7월 26일까지라는 한계를 확인했습니다.</div>
+  </div></div>
+  <div class="st"><div class="num">STEP<b>03</b></div><div class="sc">
+    <h3>날씨와 경기 결과의 관계 검증</h3><p>경기 날짜·구장 정보와 기상 데이터를 결합해, 고온·저온 등 특정 날씨에서 KIA의 승률이나 선수 성적에 차이가 생기는지 확인했습니다.</p><ul><li>분석 질문: “특정 기온이나 날씨에서 KIA의 승률 또는 선수 경기력에 차이가 나타나는가?”</li></ul><div class="note">확보한 데이터 범위에서는 일관된 관계를 확인하기 어려웠습니다. “날씨가 영향을 주지 않는다”가 아니라 “현재 데이터에서는 일관된 연관성을 확인하기 어려웠다”고 판단했습니다.</div>
+  </div></div>
+  <div class="st"><div class="num">STEP<b>04</b></div><div class="sc">
+    <h3>부상공시 데이터 수집 및 분석</h3><p>외부 환경만으로 성적 변화를 설명하기 어려워, 분석 방향을 선수 전력 변화로 확장했습니다. 2024~2026 KIA 부상공시 데이터를 직접 수집·전처리해 선수 이탈 시기와 팀 성적 변화를 비교했습니다.</p><ul><li>분석 질문: “핵심 선수의 부상과 이탈이 팀 성적 변화로 연결되었을까?”</li></ul><div class="note">특정 시즌에는 많은 선수의 이탈이 있었지만, 부상자가 많다는 사실만으로 팀 성적을 직접 설명하기는 어려웠습니다.</div>
+  </div></div>
+  <div class="st"><div class="num">STEP<b>05</b></div><div class="sc">
+    <h3>단일 변수 분석의 한계 발견</h3><p>야구의 경기 결과에는 생각보다 훨씬 많은 변수가 동시에 작용합니다. 선수가 이탈해도 구단은 대체선수 투입, 영입·트레이드, 타순 변경, 투수 운용 변화로 대응하고, 반대로 선수가 복귀해도 상대 전력과 다른 선수의 컨디션에 따라 결과가 달라집니다.</p>
+  </div></div>
+  <div class="st"><div class="num">STEP<b>06</b></div><div class="sc">
+    <h3>관점 전환 — ‘팀의 원인’에서 ‘선수의 특성’으로</h3><p>전처리가 끝난 약 3개년 PBP 데이터에는 구종 + 구속 + 투구 위치 + 타자/투수 + 타석 결과가 모두 연결되어 있었습니다. 타율·홈런·ERA처럼 어디서나 보는 기록 대신, 선수의 실제 플레이 특성을 시각화하기로 했습니다.</p><ul><li>타자: “좌완과 우완을 상대할 때 공격 방식과 결과는 어떻게 달라지는가?”</li><li>투수: “상대 타자의 유형과 상황에 따라 어떤 구종과 위치를 활용하는가?”</li></ul>
+  </div></div>
+  <div class="st"><div class="num">STEP<b>07</b></div><div class="sc">
+    <h3>KIA 선수별 강점·약점 데이터 구축</h3><p>투구 위치에 안타·홈런·삼진·헛스윙 결과를 결합하고, 특징적인 패턴이 보이면 상대 투수를 역추적해 어떤 구종·구속으로 그 결과가 나왔는지 확인했습니다.</p><ul><li>김도영(우타) — 존 상·하단 헛스윙 패턴 → 곽빈(우완)의 포심·커브·슬라이더 역추적</li><li>양현종(좌완) — 좌타자엔 슬라이더, 우타자엔 체인지업 비중 증가 → KT 타자 상대 결과 역추적</li><li>네일(우완) — TOP3 밖 구종 재분석 → 스위퍼가 삼진 결정구(최종구 삼진율 36.0%)</li></ul>
+  </div></div>
+  <div class="st"><div class="num">STEP<b>08</b></div><div class="sc">
+    <h3>최종 프로젝트 결과</h3><p>처음 질문은 “KIA는 왜 이기고 졌는가?”였습니다. 하지만 수집과 검증을 반복할수록, 야구에 관심이 없거나 어렵게 느끼는 사람들에게는 이런 분석이 닿기 어렵다는 걸 깨달았습니다.</p><ul><li>데이터 분석 결과를 활용한 튜토리얼 게임 제작</li><li>분석 데이터를 바탕으로 한 미니게임 5종 제작 및 웹 배포</li></ul>
+  </div></div>
+  </div>
+</div></section>
+<section class="soft"><div class="wrap">
+  <div class="sh"><h2><span class="k">CONCLUSION</span>누구나 만날 수 있는 <em>야구 데이터</em></h2></div>
+  <p class="lead">실제 데이터는 우리 눈에 보이지 않아도 계속 쌓이고 누적됩니다. 저희는 KIA 타자·투수의 기록을 분석해 웹게임으로 연결했습니다. 선수 데이터와 구종·구속을 먼저 체험하고, 분석 결과를 실제 경기와 비교하는 재미를 만들고자 했습니다. <b>누적된 데이터의 분석 결과를 다양한 방식으로 즐기도록 시도하는 것</b>이 저희 프로젝트의 목적입니다.</p>
+  <h3 style="font-size:22px;font-weight:900;margin-top:34px">앞으로의 서비스 확장</h3>
+  <div class="vision">
+    <div class="vc"><div class="ic">📈</div><h3>데이터 업데이트</h3><p>전처리 데이터를 갱신하고, 검증을 거쳐 경기·선수 예측 서비스로 확장합니다.</p></div>
+    <div class="vc"><div class="ic">⚾</div><h3>선수 트레이닝</h3><p>평소 유인구 위치와 상대별 안타·홈런 허용 위치를 비교해, 강점 활용 여부를 살펴보는 훈련 자료로 발전시키고자 합니다.</p></div>
+    <div class="vc"><div class="ic">🐯</div><h3>선수 분석 기반 마케팅</h3><p>선수별 특징을 굿즈·이벤트·팬 서비스에 연결하고자 합니다.</p></div>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <p class="final">야구를 좋아하라고 강요하는 게 아니라,<br><em>야구를 좋아하게 될 수 있는 첫 번째 경험</em>을<br>우리 프로젝트가 선물하고 싶었습니다.</p>
+  <p style="text-align:center;margin-top:28px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><a class="btn p" href="tutorial/index.html" target="_blank" rel="noopener">튜토리얼 게임 해보기 ▶</a><a class="btn g" href="data.html">데이터 분석 과정 보기</a></p>
+</div></section>
+<footer><div class="wrap row">
+  <div><b>WHY KIA GAMES</b><br>© 2026 Team whyError · 동아MX 데이터AI융합과정 7기<br>데이터: KBO 경기 데이터 · 기상청 ASOS · KBO PBP(Hugging Face slothman3878/kbo_playbyplay) · 부상공시 · 연봉 공개자료</div>
+  <div class="lk"><a href="team.html">팀 소개</a> · <a href="project.html">프로젝트</a> · <a href="data.html">데이터 분석과 처리</a> · <a href="index.html#games">GAME</a> · <a href="tutorial/index.html" target="_blank" rel="noopener">튜토리얼</a></div>
+</div></footer>
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img alt=""></div>
+<script>
+document.querySelectorAll('.fig img').forEach(function(im){im.addEventListener('click',function(){var lb=document.getElementById('lb');lb.querySelector('img').src=im.src;lb.classList.add('on')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').classList.remove('on')});
+</script>
+</body>
+</html>

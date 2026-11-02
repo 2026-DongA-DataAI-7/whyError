@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>팀 소개 · WHY KIA GAMES</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.members{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.mcard{border:1px solid var(--line);border-radius:16px;padding:22px 26px;display:flex;gap:22px;align-items:center;background:#fff}.mcard .ch{width:130px;height:130px;object-fit:contain;flex:none}
+.mcard.lead{grid-column:1/-1;max-width:none;font-size:inherit;border-color:var(--red);background:linear-gradient(90deg,#fff5f6,#fff)}
+.mcard .av{width:76px;height:76px;flex:none;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-weight:900;font-size:28px;color:#555}
+.mcard.lead .av{background:var(--red);color:#fff}
+.mcard .role{font-size:14px;font-weight:800;color:var(--red);letter-spacing:1.5px}
+.mcard h3{font-size:26px;font-weight:900;letter-spacing:-.6px;margin:2px 0 6px}
+.mcard p{font-size:18px;color:#333;line-height:1.7}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:14px;font-weight:700;border:1px solid var(--line);padding:3px 10px;border-radius:20px;color:#555;background:#fff}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.why .big{font-size:70px;font-weight:900;letter-spacing:-3px;line-height:1}
+.why .big span{color:var(--red)}
+@media(max-width:800px){.mcard .ch{width:96px;height:96px}.members{grid-template-columns:1fr}.mcard.lead{grid-column:auto}.why{grid-template-columns:1fr;gap:16px}.why .big{font-size:52px}}
+</style>
+</head>
+<body>
+<div class="util"><div class="wrap"><span><b>TEAM whyError</b> · 동아MX 데이터AI융합과정 7기 미니프로젝트</span><span>KIA Tigers 2024–2026 Data</span></div></div>
+<header><div class="wrap nav">
+  <a class="logo" href="index.html"><span class="mark">W</span>WHY<span>KIA</span> GAMES</a>
+  <button class="burger" aria-label="메뉴 열기" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+  <nav class="menu">
+    <a href="index.html">홈</a>
+    <a href="team.html" class="on">프로젝트 팀 소개</a>
+    <a href="project.html">프로젝트</a>
+    <a href="data.html">데이터 분석과 처리</a>
+    <div class="dd"><a href="index.html#games">GAME ▾</a><div class="sub"><a href="games/catch/index.html" target="_blank" rel="noopener">공 잡 기<small>THE CATCHER</small></a><a href="games/dodge/index.html" target="_blank" rel="noopener">공피하기<small>DODGE THE PITCH</small></a><a href="games/survival/index.html" target="_blank" rel="noopener">갸서바이벌<small>KBO SURVIVAL</small></a><a href="games/sachun/index.html" target="_blank" rel="noopener">갸천성<small>KIA BASEBALL PLAYER</small></a><a href="games/innings/index.html" target="_blank" rel="noopener">이닝체험<small>THREE INNINGS</small></a></div></div>
+  </nav>
+</div></header>
+
+<div class="phero"><div class="wrap"><span class="k">PROJECT TEAM</span><h1>이게 왜 안되조<br><em>TEAM whyError</em></h1><p>“이게 왜 안 되지?”에서 시작해, 3시즌치 KIA 데이터를 웹게임으로 바꾼 다섯 명입니다.</p></div></div>
+<section><div class="wrap">
+  <div class="members">
+    <div class="mcard lead"><img class="ch" src="assets/img/team_taewoong.png" alt="정태웅 캐릭터"><div><span class="role">TEAM LEADER · 팀장</span><h3>정태웅</h3><p>선수 데이터 수집 · 전처리 · PBP 분석 · 웹게임 제작</p></div></div>
+    <div class="mcard"><img class="ch" src="assets/img/team_nagyeom.png" alt="홍나겸 캐릭터"><div><span class="role">웹사이트</span><h3>홍나겸</h3><p>팀 데이터 수집 · 분석 데이터 검증 · 웹사이트 · 게임 제작</p></div></div>
+    <div class="mcard"><img class="ch" src="assets/img/team_jincheol.png" alt="최진철 캐릭터"><div><span class="role">PBP 분석</span><h3>최진철</h3><p>팀 데이터 수집 · 전처리 · PBP 분석 · 웹게임 제작</p></div></div>
+    <div class="mcard"><img class="ch" src="assets/img/team_seongjin.png" alt="나성진 캐릭터"><div><span class="role">기상 분석</span><h3>나성진</h3><p>팀 데이터 수집 · 전처리 · 날씨 분석 · 웹게임 제작</p></div></div>
+    <div class="mcard"><img class="ch" src="assets/img/team_junghyun.png" alt="이정현 캐릭터"><div><span class="role">테스터</span><h3>이정현</h3><p>분석 및 테스트 · 피드백 전담</p></div></div>
+  </div>
+</div></section>
+<section class="soft"><div class="wrap why">
+  <div class="big">WHY<span>?</span><br>ERROR<span>.</span></div>
+  <div><h2 style="font-size:26px;font-weight:900;letter-spacing:-.6px;margin-bottom:10px">“이게 왜 안 되지?”에서 시작한 팀</h2><p class="lead">파이썬과 DB, HTML·CSS·JavaScript를 배우며 에러 앞에서 “쌤, 도와주세요!”를 자주 외치던 사람들이 모였습니다. 함께 해결하는 시간이 쌓이면서, “어? 우리 이것도 할 줄 알잖아!”라는 경험이 늘었습니다.</p><p class="lead" style="margin-top:12px">미니프로젝트 이후 다른 팀으로 흩어지더라도, <b>각자의 자리에서 꼭 필요한 사람이 되자</b>는 마음을 담았습니다.</p><p style="margin-top:20px"><a class="btn p" href="project.html">우리의 분석 과정 보기 →</a></p></div>
+</div></section>
+<footer><div class="wrap row">
+  <div><b>WHY KIA GAMES</b><br>© 2026 Team whyError · 동아MX 데이터AI융합과정 7기<br>데이터: KBO 경기 데이터 · 기상청 ASOS · KBO PBP(Hugging Face slothman3878/kbo_playbyplay) · 부상공시 · 연봉 공개자료</div>
+  <div class="lk"><a href="team.html">팀 소개</a> · <a href="project.html">프로젝트</a> · <a href="data.html">데이터 분석과 처리</a> · <a href="index.html#games">GAME</a> · <a href="tutorial/index.html" target="_blank" rel="noopener">튜토리얼</a></div>
+</div></footer>
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img alt=""></div>
+<script>
+document.querySelectorAll('.fig img').forEach(function(im){im.addEventListener('click',function(){var lb=document.getElementById('lb');lb.querySelector('img').src=im.src;lb.classList.add('on')})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').classList.remove('on')});
+</script>
+</body>
+</html>
