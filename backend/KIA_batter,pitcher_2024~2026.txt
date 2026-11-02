@@ -1,0 +1,16 @@
+KIA_batter_2024_2026.csv
+
+데이터 출처: https://huggingface.co/datasets/slothman3878/kbo_playbyplay/tree/main/v0
+
+season 
+2024    22477
+2025    22215
+2026    14389 (7월까지의 데이터)
+Name: count, dtype: int64
+
+
+season
+2024    22477
+2025    21608
+2026    14659 (7월까지의 데이터
+Name: count, dtype: int64
